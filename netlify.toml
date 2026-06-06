@@ -1,0 +1,9 @@
+# Netlify deployment config — VisionTrack Malawi
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  publish = "."
+  # Static site — no build command required
+
+[build.environment]
+  NODE_VERSION = "20"

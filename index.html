@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VisionTrack Malawi — Nationwide youth mentorship and career development network." />
+  <title>VISIONTRACK MALAWI</title>
+
+  <!-- Brand typography: Poppins (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background canvas (drawn in script.js) -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Primary">
+      <a class="logo" href="#top">
+        <!-- Inline SVG logo mark (placeholder). Replace paths/shapes with your final logo when ready. -->
+        <svg class="logo-mark" viewBox="0 0 48 48" width="28" height="28" role="img" aria-label="VisionTrack Malawi">
+          <defs>
+            <linearGradient id="vtm-g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#16A034" />
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.75" />
+            </linearGradient>
+          </defs>
+          <!-- Malawi-inspired outline capsule -->
+          <rect x="6" y="6" width="36" height="36" rx="12" fill="rgba(10,22,40,0.55)" stroke="rgba(255,255,255,0.10)" />
+          <!-- Rising figure -->
+          <path d="M24 33c4 0 7-3 7-7 0-5-3-8-7-12-4 4-7 7-7 12 0 4 3 7 7 7Z" fill="url(#vtm-g)" opacity="0.9"/>
+          <!-- Reaching arm -->
+          <path d="M26.5 18.5c3-2 5-3 7-3" fill="none" stroke="#16A034" stroke-width="2" stroke-linecap="round"/>
+          <!-- Star of excellence -->
+          <path d="M36 13l1.2 2.8L40 17l-2.8 1.2L36 21l-1.2-2.8L32 17l2.8-1.2L36 13Z" fill="#E10600" opacity="0.95"/>
+          <!-- Curved stripes motif -->
+          <path d="M10 34c7-6 21-6 28 0" fill="none" stroke="#E10600" stroke-width="2" opacity="0.35"/>
+          <path d="M10 36c7-5 21-5 28 0" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.25"/>
+          <path d="M10 38c7-4 21-4 28 0" fill="none" stroke="#16A034" stroke-width="2" opacity="0.35"/>
+        </svg>
+        <span class="logo-text">Vision<span class="logo-accent">Track</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#account">Account</a></li>
+        <!-- Theme toggle (persists to localStorage). -->
+        <li>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span class="theme-toggle-text">Theme</span>
+          </button>
+        </li>
+        <li><a class="btn btn-sm btn-primary" href="#join">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ========== HERO (HOME) ========== -->
+    <section class="hero section" id="home" aria-labelledby="hero-heading">
+      <div class="hero-grid container">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Nationwide Youth Network · Malawi</p>
+          <h1 id="hero-heading">
+            Guide. Inspire. <span class="gradient-text">Empower.</span>
+          </h1>
+          <p class="hero-tagline">
+            Building a nationwide mentorship and career development network among the youth.
+          </p>
+          <p class="hero-lead">
+            VisionTrack Malawi connects students, graduates, professionals, mentors, and institutions
+            to unlock guidance, skills, and leadership opportunities across the nation.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#join">Join the Network</a>
+            <a class="btn btn-outline" href="#about">Explore Our Mission</a>
+          </div>
+          <ul class="hero-stats" aria-label="Platform highlights">
+            <li>
+              <strong data-count="500" data-suffix="+">0</strong>
+              <span>Mentors</span>
+            </li>
+            <li>
+              <strong data-count="12000" data-suffix="+">0</strong>
+              <span>Youth reached</span>
+            </li>
+            <li>
+              <strong data-count="28" data-suffix="">0</strong>
+              <span>Districts</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="150">
+          <div class="hero-card glass">
+            <div class="hero-card-glow"></div>
+            <div class="orbit-ring orbit-ring--1"></div>
+            <div class="orbit-ring orbit-ring--2"></div>
+            <div class="hero-symbol" aria-hidden="true">
+              <span class="symbol-star">★</span>
+              <span class="symbol-figure"></span>
+            </div>
+            <p class="hero-card-caption">Reaching toward excellence — nationwide.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand color stripe motif (Malawi red / white / green) -->
+      <div class="stripe-band" aria-hidden="true">
+        <span class="stripe stripe--red"></span>
+        <span class="stripe stripe--white"></span>
+        <span class="stripe stripe--green"></span>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">About Us</p>
+          <h2 id="about-heading">Purpose-driven mentorship for Malawi’s youth</h2>
+        </header>
+
+        <div class="about-grid">
+          <article class="glass card reveal">
+            <h3>Mission</h3>
+            <p>
+              To empower Malawi’s youth through mentorship, career guidance, networking, leadership
+              development, and access to opportunities that transform lives and communities.
+            </p>
+          </article>
+          <article class="glass card reveal" data-delay="100">
+            <h3>Vision</h3>
+            <p>
+              To create a connected generation of empowered, skilled, and purpose-driven young leaders
+              across Malawi.
+            </p>
+          </article>
+          <article class="glass card reveal" data-delay="200">
+            <h3>Brand Message</h3>
+            <p>
+              We exist to guide, inspire, and empower young people through meaningful mentorship
+              connections and career development opportunities that shape a better future.
+            </p>
+          </article>
+        </div>
+
+        <div class="objectives reveal" data-delay="150">
+          <h3 class="objectives-title">Core Objectives</h3>
+          <ul class="objectives-list">
+            <li>Build a nationwide mentorship network</li>
+            <li>Support career development among youth</li>
+            <li>Promote leadership and entrepreneurship</li>
+            <li>Connect students with professionals and institutions</li>
+            <li>Provide access to opportunities, training, and guidance</li>
+            <li>Encourage innovation and personal growth</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MENTORSHIP PROGRAMS ========== -->
+    <section class="section section--alt" id="programs" aria-labelledby="programs-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Mentorship Programs</p>
+          <h2 id="programs-heading">Structured paths to growth</h2>
+          <p class="section-desc">
+            Match with mentors, join cohorts, and track your development on a guided journey toward success.
+          </p>
+        </header>
+
+        <div class="card-grid">
+          <article class="feature-card glass reveal">
+            <span class="feature-icon" aria-hidden="true">01</span>
+            <h3>Mentor Matching</h3>
+            <p>Smart pairing connects youth with professionals aligned to their goals and interests.</p>
+          </article>
+          <article class="feature-card glass reveal" data-delay="80">
+            <span class="feature-icon" aria-hidden="true">02</span>
+            <h3>Leadership Labs</h3>
+            <p>Build confidence, communication, and visionary leadership through interactive sessions.</p>
+          </article>
+          <article class="feature-card glass reveal" data-delay="160">
+            <span class="feature-icon" aria-hidden="true">03</span>
+            <h3>Peer Circles</h3>
+            <p>Community-driven groups for accountability, networking, and shared learning nationwide.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CAREER DEVELOPMENT ========== -->
+    <section class="section" id="career" aria-labelledby="career-heading">
+      <div class="container split">
+        <div class="split-content reveal">
+          <p class="eyebrow">Career Development</p>
+          <h2 id="career-heading">From classroom to career</h2>
+          <p>
+            Resources, coaching, and opportunity boards help students, graduates, and job seekers
+            navigate their next step with clarity and confidence.
+          </p>
+          <ul class="check-list">
+            <li>Career opportunity board</li>
+            <li>Skills assessments & learning paths</li>
+            <li>Resume and interview workshops</li>
+            <li>Employer and institution partnerships</li>
+          </ul>
+          <a class="btn btn-primary" href="#resources">Browse Resources</a>
+        </div>
+        <div class="split-visual reveal" data-delay="120">
+          <div class="dashboard-preview glass">
+            <div class="dashboard-bar"><span></span><span></span><span></span></div>
+            <div class="dashboard-body">
+              <div class="dashboard-row"></div>
+              <div class="dashboard-row dashboard-row--accent"></div>
+              <div class="dashboard-row"></div>
+              <div class="dashboard-chart" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EVENTS & WORKSHOPS ========== -->
+    <section class="section section--alt" id="events" aria-labelledby="events-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Events & Workshops</p>
+          <h2 id="events-heading">Learn, connect, grow</h2>
+        </header>
+
+        <div class="events-list">
+          <article class="event-item glass reveal">
+            <time datetime="2026-06-15">Jun 15, 2026</time>
+            <div>
+              <h3>National Youth Leadership Summit</h3>
+              <p>Lilongwe · Keynotes, panels, and mentor meetups for future leaders.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="#join">Register</a>
+          </article>
+          <article class="event-item glass reveal" data-delay="80">
+            <time datetime="2026-07-08">Jul 08, 2026</time>
+            <div>
+              <h3>Career Pathways Workshop</h3>
+              <p>Blantyre · Hands-on sessions for graduates and job seekers.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="#join">Register</a>
+          </article>
+          <article class="event-item glass reveal" data-delay="160">
+            <time datetime="2026-08-22">Aug 22, 2026</time>
+            <div>
+              <h3>Innovation & Entrepreneurship Bootcamp</h3>
+              <p>Virtual + hubs · Pitch training and mentor office hours.</p>
+            </div>
+            <a class="btn btn-sm btn-outline" href="#join">Register</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SUCCESS STORIES ========== -->
+    <section class="section" id="stories" aria-labelledby="stories-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Success Stories</p>
+          <h2 id="stories-heading">Voices from the network</h2>
+        </header>
+
+        <div class="stories-grid">
+          <blockquote class="story-card glass reveal">
+            <p>
+              “My mentor helped me land my first internship. VisionTrack gave me direction when I needed it most.”
+            </p>
+            <footer>
+              <cite>Chimwemwe Banda</cite>
+              <span>University Graduate · Lilongwe</span>
+            </footer>
+          </blockquote>
+          <blockquote class="story-card glass reveal" data-delay="100">
+            <p>
+              “As a professional, giving back through mentorship has been the most rewarding part of my career.”
+            </p>
+            <footer>
+              <cite>Dr. Grace Phiri</cite>
+              <span>Mentor · Healthcare</span>
+            </footer>
+          </blockquote>
+          <blockquote class="story-card glass reveal" data-delay="200">
+            <p>
+              “Our school partnered with VisionTrack — students now have real pathways, not just dreams.”
+            </p>
+            <footer>
+              <cite>James Mwale</cite>
+              <span>Educator · Mzuzu</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESOURCES ========== -->
+    <section class="section section--alt" id="resources" aria-labelledby="resources-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Resources</p>
+          <h2 id="resources-heading">Tools for every stage</h2>
+        </header>
+
+        <div class="resource-tags reveal">
+          <span>Youth Empowerment</span>
+          <span>Mentorship</span>
+          <span>Career Development</span>
+          <span>Leadership</span>
+          <span>Innovation</span>
+          <span>Networking</span>
+          <span>Skills Development</span>
+          <span>Future Leaders</span>
+        </div>
+
+        <div class="card-grid card-grid--4">
+          <a class="resource-card glass reveal" href="#join">
+            <h3>Career Guides</h3>
+            <p>PDFs, checklists, and roadmaps for students and graduates.</p>
+          </a>
+          <a class="resource-card glass reveal" href="#join" data-delay="60">
+            <h3>Webinars</h3>
+            <p>On-demand sessions from mentors and industry leaders.</p>
+          </a>
+          <a class="resource-card glass reveal" href="#join" data-delay="120">
+            <h3>Opportunity Board</h3>
+            <p>Jobs, internships, scholarships, and fellowships.</p>
+          </a>
+          <a class="resource-card glass reveal" href="#join" data-delay="180">
+            <h3>Community Forum</h3>
+            <p>Ask questions, share wins, and grow together.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== JOIN THE NETWORK ========== -->
+    <section class="section cta-section" id="join" aria-labelledby="join-heading">
+      <div class="container cta-inner glass reveal">
+        <div class="cta-content">
+          <p class="eyebrow">Join the Network</p>
+          <h2 id="join-heading">Start your track toward a brighter future</h2>
+          <p>
+            Whether you are a student, graduate, mentor, or institution — there is a place for you
+            in Malawi’s youth empowerment movement.
+          </p>
+          <!--
+            Optional: connect this form to a real endpoint.
+            1) Put your endpoint URL into the data-endpoint attribute on the form below.
+            2) The page will POST JSON to it via fetch().
+          -->
+        </div>
+        <form class="join-form" id="join-form" data-endpoint="" novalidate>
+          <label class="sr-only" for="join-name">Full name</label>
+          <input type="text" id="join-name" name="name" placeholder="Full name" required autocomplete="name" />
+          <label class="sr-only" for="join-email">Email</label>
+          <input type="email" id="join-email" name="email" placeholder="Email address" required autocomplete="email" />
+          <label class="sr-only" for="join-role">I am a...</label>
+          <select id="join-role" name="role" required>
+            <option value="" disabled selected>I am a...</option>
+            <option value="student">Student</option>
+            <option value="graduate">Young Graduate</option>
+            <option value="mentor">Mentor / Professional</option>
+            <option value="institution">Institution / Partner</option>
+          </select>
+          <button class="btn btn-primary btn-block" type="submit">Request Access</button>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== COMMUNITY COMMENTS (Supabase backend) ========== -->
+    <section class="section section--alt" id="community" aria-labelledby="community-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="eyebrow">Community</p>
+          <h2 id="community-heading">Share your thoughts</h2>
+          <p class="section-desc">Create an account to join the conversation with youth, mentors, and partners nationwide.</p>
+        </header>
+
+        <p class="backend-notice glass" id="backend-notice" hidden role="status">
+          Backend not connected. Add Supabase keys in <code>js/config.js</code> — see <a href="DEPLOY.md" target="_blank" rel="noopener">DEPLOY.md</a> for steps.
+        </p>
+
+        <div class="comments-layout">
+          <div class="comments-feed reveal">
+            <div id="comments-list" class="comments-list" aria-live="polite">
+              <p class="comments-empty">Loading comments…</p>
+            </div>
+          </div>
+
+          <aside class="comments-aside reveal" data-delay="100">
+            <p class="comments-login-hint" id="comments-login-hint">
+              <a href="#account">Sign in</a> or <a href="#account">create an account</a> to post a comment.
+            </p>
+            <form class="comment-form glass" id="comment-form" hidden>
+              <label for="comment-input">Your comment</label>
+              <textarea id="comment-input" name="content" rows="4" placeholder="Share encouragement, questions, or opportunities…" maxlength="2000" required></textarea>
+              <button class="btn btn-primary btn-block" type="submit">Post Comment</button>
+              <p class="form-feedback" id="comments-feedback" role="status" aria-live="polite"></p>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ACCOUNT (Sign up / Sign in) ========== -->
+    <section class="section" id="account" aria-labelledby="account-heading">
+      <div class="container account-wrap">
+        <header class="section-header reveal">
+          <p class="eyebrow">Your Account</p>
+          <h2 id="account-heading">Join the VisionTrack network</h2>
+          <p class="section-desc">Create a free account to comment, connect, and stay updated.</p>
+        </header>
+
+        <div class="account-panel glass reveal">
+          <div id="auth-status" class="auth-status" hidden></div>
+          <button class="btn btn-outline" type="button" id="logout-btn" hidden>Sign out</button>
+
+          <div id="auth-forms" class="auth-forms">
+            <div class="auth-grid">
+              <form class="auth-form" id="signup-form" novalidate>
+                <h3>Create account</h3>
+                <label for="signup-name">Full name</label>
+                <input type="text" id="signup-name" name="full_name" required autocomplete="name" />
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="email" required autocomplete="email" />
+                <label for="signup-password">Password (6+ characters)</label>
+                <input type="password" id="signup-password" name="password" minlength="6" required autocomplete="new-password" />
+                <label for="signup-role">I am a…</label>
+                <select id="signup-role" name="role">
+                  <option value="student">Student</option>
+                  <option value="graduate">Young Graduate</option>
+                  <option value="mentor">Mentor / Professional</option>
+                  <option value="institution">Institution / Partner</option>
+                </select>
+                <button class="btn btn-primary btn-block" type="submit">Sign up</button>
+              </form>
+
+              <form class="auth-form" id="login-form" novalidate>
+                <h3>Sign in</h3>
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required autocomplete="email" />
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required autocomplete="current-password" />
+                <button class="btn btn-outline btn-block" type="submit">Sign in</button>
+              </form>
+            </div>
+          </div>
+
+          <p class="form-feedback" id="auth-feedback" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Contact Us</p>
+          <h2 id="contact-heading">Let’s build the future together</h2>
+          <p>Reach out for partnerships, media, or general inquiries.</p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:fletcherkatete42@gmail.com">fletcherkatete42@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+265880749069">0880749069</a></li>
+            <li><strong>WhatsApp 1:</strong> <a href="https://wa.me/265880749069" target="_blank" rel="noopener noreferrer">0880749069</a></li>
+            <li><strong>WhatsApp 2:</strong> <a href="https://wa.me/265899670334" target="_blank" rel="noopener noreferrer">0899670334</a></li>
+            <li><strong>Location:</strong> Lilongwe, Malawi</li>
+          </ul>
+        </div>
+        <form class="contact-form glass reveal" data-delay="100" id="contact-form" data-endpoint="" novalidate>
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required />
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="4" required></textarea>
+          <label for="contact-channel">Send via</label>
+          <select id="contact-channel" name="channel">
+            <option value="whatsapp" selected>WhatsApp</option>
+            <option value="email">Email</option>
+            <option value="both">Both WhatsApp and Email</option>
+          </select>
+          <button class="btn btn-outline" type="submit">Send Message</button>
+          <p class="form-feedback" id="contact-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo" href="#top">
+        <span class="logo-text">Vision<span class="logo-accent">Track</span> Malawi</span>
+      </a>
+      <p class="footer-tagline">Nationwide youth mentorship & career development.</p>
+      <p class="footer-live-link" id="site-live-url">
+        Live site: <a href="#" id="footer-site-link">Deploy to Netlify to get your link</a>
+      </p>
+      <p class="footer-setup">
+        <a href="DEPLOY.md" target="_blank" rel="noopener noreferrer">Setup guide: Supabase + Netlify (DEPLOY.md)</a>
+      </p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#account">Account</a>
+        <a href="#community">Community</a>
+        <a href="#join">Join</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; <span id="year"></span> VisionTrack Malawi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Supabase (accounts + comments). Configure keys in js/config.js — full guide: DEPLOY.md -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
