@@ -15,8 +15,8 @@
  * ⚠️  This file is safe to commit to Git.
  */
 
-const SUPABASE_URL = "https://your-project.supabase.co"; // Replace with your project URL
-const SUPABASE_ANON_KEY = "your-anon-key-here"; // Replace with your anon key
+const SUPABASE_URL = "https://fyduanykqsbdwafsfbfg.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5ZHVhbnlrcXNiZHdhZnNmYmZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3ODY3NTgsImV4cCI6MjA5NTM2Mjc1OH0.tkNApizFdcprwVEtxQccPz1CGA2KgwoROpeYA_lXGoY";
 
 // Initialize Supabase client (window.supabase from CDN)
 let supabase = null;
